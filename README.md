@@ -29,7 +29,7 @@ Check [dbt Hub](https://hub.getdbt.com/) for the latest installation instruction
 packages:
   
   - package: Matatika/tap-trello
-    version: ["0.1.0"]
+    version: 0.1.0
   
   - package: re-data/re_data
     version: 0.5.1
