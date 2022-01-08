@@ -47,3 +47,31 @@ dbt deps
 ```
 dbt test
 ```
+
+## Cloud hosting and SaaS
+Deploy on the Matatika Platform within minutes. [www.matatika.com](https://www.matatika.com)
+
+## Contributions
+
+Additional contributions to this package are very welcome! Please create issues
+or open PRs against `master`. Check out 
+[this post](https://discourse.getdbt.com/t/contributing-to-a-dbt-package/657) 
+on the best workflow for contributing to a package.
+
+## Resources:
+- Have questions, feedback, or need help? Please email us at support@matatika.com
+- Find all of Matatika's pre-built dbt packages in our [dbt hub](https://hub.getdbt.com/Matatika/)
+- Learn how to orchestrate [dbt transformations with Matatika](https://www.matatika.com/docs/getting-started/)
+- Learn more about Matatika [in our docs](https://www.matatika.com/docs/introduction)
+- Learn more about dbt [in the dbt docs](https://docs.getdbt.com/docs/introduction)
+
+## License
+You are granted use of this library under the [AGPLv3 License](https://github.com/Matatika/dbt-tap-solarvista/blob/master/LICENSE) terms.
+
+This license grants you the freedom to use the software without any warranties, but requires you to open source your platform with the same terms if you distribute or host a service using any part of this library.  Contact us for a commercial embedded license to remove this restriction.
+
+---
+
+Copyright &copy; 2020 Matatika
+
+
