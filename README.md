@@ -48,6 +48,9 @@ dbt deps
 dbt test
 ```
 
+## Database Support
+This package has been tested on Postgres.
+
 ## Cloud hosting and SaaS
 Deploy on the Matatika Platform within minutes. [www.matatika.com](https://www.matatika.com)
 
