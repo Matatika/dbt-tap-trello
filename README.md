@@ -49,7 +49,7 @@ dbt test
 ```
 
 ## Database Support
-This package has been tested on Postgres.
+This package has been tested on [Google BigQuery](https://cloud.google.com/bigquery).
 
 ## Cloud hosting and SaaS
 Deploy on the Matatika Platform within minutes. [www.matatika.com](https://www.matatika.com)
