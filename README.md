@@ -49,7 +49,17 @@ dbt test
 ```
 
 ## Database Support
-This package has been tested on [Google BigQuery](https://cloud.google.com/bigquery) and [Snowflake](https://www.snowflake.com/).
+This package has been tested on [Google BigQuery](https://cloud.google.com/bigquery) and [Snowflake](https://www.snowflake.com/).   
+
+### Google BigQuery
+
+**NB** : Google BigQuery supports only newline delimited json data. So you can convert native json files to the supported format via the following command: 
+
+```
+cat response.json | jq -c '.[]'
+```
+
+Due to the way Trello API is structured, we decided to create two tables for both 
 
 ## Cloud hosting and SaaS
 Deploy on the Matatika Platform within minutes. [www.matatika.com](https://www.matatika.com)
