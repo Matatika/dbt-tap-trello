@@ -59,7 +59,9 @@ This package has been tested on [Google BigQuery](https://cloud.google.com/bigqu
 cat response.json | jq -c '.[]'
 ```
 
-Due to the way Trello API is structured, we decided to create two tables for both 
+Due to the way Trello API is structured, we decided to create two tables: `Trello_Boards` and `Trello_Cards` to make it possible to generate data for the preceding goals.  
+
+
 
 ## Cloud hosting and SaaS
 Deploy on the Matatika Platform within minutes. [www.matatika.com](https://www.matatika.com)
