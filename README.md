@@ -61,6 +61,10 @@ cat response.json | jq -c '.[]'
 
 Due to the way [Trello API](https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/) is structured, we decided to create three tables: `Trello_Boards_tbl`, `Trello_Cards_tbl` and `Trello_list_tbl`. These tables were joined together to generate data for the preceding goals.  
 
+### Snowflake   
+
+For [Snowflake](https://www.snowflake.com/) three tables were created to hold dataset for boards, cards and stages in trello. 
+
 
 
 ## Cloud hosting and SaaS
