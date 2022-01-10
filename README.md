@@ -59,7 +59,7 @@ This package has been tested on [Google BigQuery](https://cloud.google.com/bigqu
 cat response.json | jq -c '.[]'
 ```
 
-Due to the way Trello API is structured, we decided to create two tables: `Trello_Boards` and `Trello_Cards` to make it possible to generate data for the preceding goals.  
+Due to the way [Trello API](https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/) is structured, we decided to create three tables: `Trello_Boards_tbl`, `Trello_Cards_tbl` and `Trello_list_tbl`. These tables were joined together to generate data for the preceding goals.  
 
 
 
