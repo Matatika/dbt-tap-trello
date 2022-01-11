@@ -1,16 +1,22 @@
+{% set t_board = " " %}
+                   
+{% set id_Board = " " %}
+
+{% set stage_name = [" ", " ", " ", " "]
+
 with all_boards as (   
     SELECT name, id FROM trello_boards.trello_board_table
 ), 
 
 specific_board as ( 
 
-    SELECT name, id FROM all_boards WHERE name = "Data-Blog"
+    SELECT name, id FROM all_boards WHERE name = {{ t_boards }}
     
  ),  
 
  cards as (  
 
-SELECT name AS card_name, idBoard AS  BoardID, idList as ListID  FROM trello_boards.trello_cards_tbl WHERE idBoard = "61d9326d6997b761f1b2273f"
+SELECT name AS card_name, idBoard AS  BoardID, idList as ListID  FROM trello_boards.trello_cards_tbl WHERE idBoard = {{ id_Board }} 
 ),  
 
 stage_board as (  
@@ -37,7 +43,7 @@ SELECT count(card_name) as Post_Completed_Cards
 
 FROM num_cards_stage 
 
-WHERE stage_name = "Post Completed"
+WHERE stage_name = {{ stage_name[] }}
  ),
 
 Post_Suggestions_Cards as (
@@ -46,7 +52,7 @@ SELECT count(card_name) as Post_Suggestions_Cards
 
 FROM num_cards_stage 
 
-WHERE stage_name = "Post Suggestions"
+WHERE stage_name = {{ stage_name[] }}
 
 ),
 
@@ -56,7 +62,7 @@ SELECT count(card_name) as Post_Draft_Cards
 
 FROM num_cards_stage 
 
-WHERE stage_name = "Post Draft"
+WHERE stage_name = {{ stage_name[] }}
 
  ),
 
@@ -66,7 +72,7 @@ SELECT count(card_name) as Post_Introduction_Cards
 
 FROM num_cards_stage 
 
-WHERE stage_name = "Post Introduction"
+WHERE stage_name = {{ stage_name[] }}
 
  ) 
 
