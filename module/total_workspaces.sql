@@ -1,3 +1,7 @@
+
+{{ config(materialized='view') }}
+
+
 with trello_board as (  
 
 SELECT name, idOrganization FROM trello_boards.trello_board_table where name = "Data-Blog" 
