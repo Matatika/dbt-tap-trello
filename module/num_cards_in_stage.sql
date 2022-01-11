@@ -9,7 +9,7 @@
 {% set stage_name = [" ", " ", " ", " "]
 
 with all_boards as (   
-    SELECT name, id from {{ ref('trello_boards') }}  
+    select name, id from {{ ref('trello_boards') }}  
 ), 
 
 
@@ -21,12 +21,12 @@ specific_board as (
 
  cards as (  
 
-SELECT name AS card_name, idBoard AS  BoardID, idList as ListID  FROM {{ ref('trello_cards') }} WHERE idBoard = {{ id_Board }} 
+select name as card_name, idBoard as  BoardID, idList as ListID  from {{ ref('trello_cards') }} WHERE idBoard = {{ id_Board }} 
 ),  
 
 stage_board as (  
 
-SELECT name AS stage_name, idBoard as Board_number, id as stage_id  FROM {{ ref('trello_list') }}
+select name as stage_name, idBoard as Board_number, id as stage_id  from {{ ref('trello_list') }}
 
 ),
 
@@ -44,40 +44,40 @@ on cards.ListID = stage_board.stage_id
 
  Post_Completed_Cards as (
 
-SELECT count(card_name) as Post_Completed_Cards 
+select count(card_name) as Post_Completed_Cards 
 
-FROM num_cards_stage 
+from num_cards_stage 
 
-WHERE stage_name = {{ stage_name[] }}
+where stage_name = {{ stage_name[] }}
  ),
 
 Post_Suggestions_Cards as (
 
-SELECT count(card_name) as Post_Suggestions_Cards 
+select count(card_name) as Post_Suggestions_Cards 
 
-FROM num_cards_stage 
+from num_cards_stage 
 
-WHERE stage_name = {{ stage_name[] }}
+where stage_name = {{ stage_name[] }}
 
 ),
 
 Post_Draft as (  
 
-SELECT count(card_name) as Post_Draft_Cards 
+select count(card_name) as Post_Draft_Cards 
 
-FROM num_cards_stage 
+from num_cards_stage 
 
-WHERE stage_name = {{ stage_name[] }}
+where stage_name = {{ stage_name[] }}
 
  ),
 
 Post_Introduction as ( 
 
-SELECT count(card_name) as Post_Introduction_Cards 
+select count(card_name) as Post_Introduction_Cards 
 
-FROM num_cards_stage 
+from num_cards_stage 
 
-WHERE stage_name = {{ stage_name[] }}
+where stage_name = {{ stage_name[] }}
 
  ) 
 
