@@ -3,7 +3,7 @@
 
 {{% board_name = " " %}}
 
-{{% id_org = " "%}}
+{{% id_org = " " %}}
 
 with trello_board as (  
 
