@@ -5,20 +5,6 @@ question: how many
 description: |-
   This counts the number of cards in each stage of a trello board.
   
- metadata: |-
-  {
-    "name": "num_cards_in_stage",
-    "label": "Your Most Listened Genres By Artist Long Term", 
-    "related_table": {
-      "columns": [
-        {"name": "genre", "label": "Genre", "description": "Genre"}
-      ],
-      "aggregates": [
-        {"name": "genre_count", "label": "Genre Count", "description": "Genre Count"}
-      ]
-    }
-  }
-
 visualisation: |-
   {"chartjs-chart": 
     {"chartType": "bar", 
