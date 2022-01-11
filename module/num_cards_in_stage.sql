@@ -9,35 +9,36 @@
 {% set stage_name = [" ", " ", " ", " "]
 
 with all_boards as (   
-    SELECT name, id FROM trello_boards.trello_board_table
+    SELECT name, id from {{ ref('trello_boards') }}  
 ), 
+
 
 specific_board as ( 
 
-    SELECT name, id FROM all_boards WHERE name = {{ t_boards }}
+    select name, id from all_boards Where name = {{ t_boards }}
     
  ),  
 
  cards as (  
 
-SELECT name AS card_name, idBoard AS  BoardID, idList as ListID  FROM trello_boards.trello_cards_tbl WHERE idBoard = {{ id_Board }} 
+SELECT name AS card_name, idBoard AS  BoardID, idList as ListID  FROM {{ ref('trello_cards') }} WHERE idBoard = {{ id_Board }} 
 ),  
 
 stage_board as (  
 
-SELECT name AS stage_name, idBoard as Board_number, id as stage_id  FROM trello_boards.trello_list_tbl 
+SELECT name AS stage_name, idBoard as Board_number, id as stage_id  FROM {{ ref('trello_list') }}
 
 ),
 
  num_cards_stage as (
 
-SELECT cards.card_name, cards.ListID, stage_board.stage_name
+select cards.card_name, cards.ListID, stage_board.stage_name
 
-FROM cards 
+from cards 
 
-INNER JOIN stage_board 
+inner join stage_board 
 
-ON cards.ListID = stage_board.stage_id
+on cards.ListID = stage_board.stage_id
 
  ),
 
