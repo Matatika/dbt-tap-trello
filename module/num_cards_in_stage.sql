@@ -1,3 +1,7 @@
+
+{{ config(materialized='view') }}
+
+
 {% set t_board = " " %}
                    
 {% set id_Board = " " %}
