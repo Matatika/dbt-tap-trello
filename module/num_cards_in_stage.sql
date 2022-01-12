@@ -21,7 +21,7 @@ specific_board as (
 
  cards as (  
 
-select name as card_name, idBoard as  BoardID, idList as ListID  from {{ ref('trello_cards') }} WHERE idBoard = {{ id_Board }} 
+select name as card_name, idBoard as  BoardID, idList_card as ListID  from {{ ref('trello_cards') }} where idBoard = {{ id_Board }} 
 ),  
 
 stage_board as (  
