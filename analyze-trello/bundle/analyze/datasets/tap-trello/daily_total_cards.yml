@@ -1,7 +1,7 @@
 version: datasets/v0.2
 source: trello
-title: number of cards in each stage of a trello board
-question: how many 
+title: daily total cards in a stage of a trello board
+question: whats the total number of cards in a stage ? 
 description: |-
   This counts the number of cards in each stage of a trello board.
   
