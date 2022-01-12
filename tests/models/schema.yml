@@ -1,0 +1,110 @@
+--- 
+models: 
+  - name: trello_board_table 
+    description: list of trello boards in a trello user's workspace
+
+    column:   
+    -  name: name  
+       description: unique name for a trello board. there should be no duplicates
+       test:
+       - not_null 
+       - unique  
+       name: id 
+       test:   
+       - not_null 
+
+  - name: trello_cards_tbl  
+    description: cards available on a specific trello board
+   
+    column:   
+    -  name: idBoard
+       description: idBoard and idList values should exist.
+
+       test:   
+       - not_null
+   
+    -  name: idList   
+       description: idlist refers to where a card is located on a trello board stage.
+
+       test:   
+       - not_null 
+
+    -  name:  name  
+       description: title of cards on a trello board 
+      
+       test:   
+       - not_null 
+       - unique  
+
+    -  name: id   
+       description: id of cards on a trello board   
+
+       test:    
+       - not_null 
+       - unique   
+
+    -  name: url   
+       description: url link of cards on a trello board 
+
+       test:  
+       - not null
+       - unique   
+  
+  - name: trello_list_tbl
+    description: stages of a trello board 
+   
+    column: 
+    -  name: name
+       description: name of a trello board stage 
+
+       test:  
+       - not_null 
+       - unique   
+
+    -  name: idBoard
+       description: stage connected to a specific trello board   
+
+       test:  
+       - not_null     
+
+    -  name: id  
+       description: id of trello stage
+  
+  - name:  trello_org 
+    description: trello_org table refers to a user's account
+     
+    column:  
+    -  name: displayName
+       description: name of a trello workspace owned a trello user account 
+
+       test:   
+       - not_null 
+       - unique 
+
+    -  name: id  
+       description: id of a trello workspace
+
+       test:  
+       - not_null 
+       - unique       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+     
