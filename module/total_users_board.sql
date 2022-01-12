@@ -1,23 +1,26 @@
+
+{{% set stage_name = " " %}}  
+
 with all_boards as (
 
-    select name, id from trello_boards.trello_board_table  
+    select name, id from {{ ref(trello_boards) }}  
 ), 
 
 
 specific_board as ( 
 
-    select name, id from all_boards Where name = "Data-Blog"
+    select name, id from all_boards Where name = {{ board_title }}
     
  ),  
 
  cards as (  
 
-select name as card_name, idBoard as  BoardID, idList as idList_card  from trello_boards.trello_cards_tbl where idBoard =  "61d9326d6997b761f1b2273f" 
+select name as card_name, idBoard as  BoardID, idList as idList_card  from {{ ref(trello_cards) }} where idBoard =  {{ idBoard_value }}
 ),  
 
 stage_board as (  
 
-select name as stage_name, idBoard as Board_number, id as stage_id  from trello_boards.trello_list_tbl 
+select name as stage_name, idBoard as Board_number, id as stage_id  from {{ ref(trello_list) }}
 
 ), 
 
@@ -29,5 +32,5 @@ from stage_board, cards
 where stage_board.stage_id = cards.idList_card 
 )   
 
-select count(card_name) as trello_card from daily_total where stage_name = "Post_Suggestions"  
+select count(card_name) as trello_card from daily_total where stage_name = {{ stage_name }} 
 
