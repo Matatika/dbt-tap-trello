@@ -1,5 +1,9 @@
 
+
+
 {{% set stage_name = " " %}}  
+
+{{% set idBoard_value= " " %}}
 
 with all_boards as (
 
