@@ -1,6 +1,6 @@
 with board_cards as  (
 
-select IdBoard, name, url, id as card_id, idList as idList_card from trello_boards.trello_cards_tbl
+select IdBoard, name, url, id, idList  from trello_boards.trello_cards_tbl
 
 )   
 
