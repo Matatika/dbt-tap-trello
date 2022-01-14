@@ -15,7 +15,6 @@ This package along with the [Analyze Bundle](..................) are designed in
 
 | Models | Description |  
 |--------|-------------|  
-| num_cards | This model lists the number of cards in each stage of a trello board | 
 | daily_total_cards | This model is similar to the preceding model but checks the total number of cards in each stage of a trello board daily |  
 | total_workspaces | This model lists the number of workspaces in a user's trello account |  
 | total_users_board | This model lists the total number of users invited to a trello board | 
@@ -47,17 +46,7 @@ dbt test
 
 ## Database Support
 This package has been tested on [Google BigQuery](https://cloud.google.com/bigquery) and [Snowflake](https://www.snowflake.com/).   
-
-### Google BigQuery
-
-**NB** : Google BigQuery supports only newline delimited json data. So you can convert native json files to the supported format via the following command: 
-
-```
-cat response.json | jq -c '.[]'
-```
-
-Due to the way [Trello API](https://developer.atlassian.com/cloud/trello/guides/rest-api/api-introduction/) is structured, we decided to create three tables: `Trello_Boards_tbl`, `Trello_Cards_tbl` and `Trello_list_tbl`. These tables were joined together to generate data for the preceding goals.  
-
+ 
 ## Cloud hosting and SaaS
 Deploy on the Matatika Platform within minutes. [www.matatika.com](https://www.matatika.com)
 
