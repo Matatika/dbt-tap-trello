@@ -3,4 +3,4 @@ with all_boards as (
 )
 
 SELECT * FROM all_boards
-~                          
+                       
