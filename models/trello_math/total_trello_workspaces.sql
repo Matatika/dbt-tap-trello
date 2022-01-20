@@ -10,7 +10,7 @@ select name, idOrganization from {{ ref('trello_board') }}
 
 org as (
 
-   select displayName as workspace_name, id as org_id from {{ ref('trello_org') }} 
+   select display_name as workspace_name, id as org_id from {{ ref('trello_org') }} 
 
  ),
 
