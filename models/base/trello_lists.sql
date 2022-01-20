@@ -1,6 +1,6 @@
 with source_lists (
 
-SELECT * from {{ source('trello_source', 'cards') }}
+SELECT * from {{ source('trello_source', 'trello_lists') }}
 
 )   
 
