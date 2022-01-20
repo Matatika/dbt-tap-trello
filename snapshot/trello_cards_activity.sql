@@ -1,21 +1,22 @@
-{% snapshot trello_cards_activity %}
+{% snapshot daily_total_cards_per_stage %}
 
   {{
         config(
           target_schema='snapshots',
-          strategy='timestamp',
-          unique_key='id',
-          updated_at ='dateLastActivity',
-          invalid_hard_deletes =True
+          strategy='check',
+          unique_key='stage_name',
+          check_cols='total_cards',
+          invalid_hard_deletes=True
         )
     }}
 
 
-select IdBoard, name, url, id, idList, dateLastActivity from trello_boards.trello_cards_tbl
+select total_cards, stage_name from {{ ref('total_cards_each_stage') }} 
 
 
 {% endsnapshot %}
 
+                         
 
 
 
