@@ -1,6 +1,6 @@
 with all_boards as (
 
-    select name as board_name, id as board_id  from trello-13.trello_data.trello_board
+    select name as board_name, id as board_id  from {{ source('trello_source', 'trello_board') }}
 ),
 
 
@@ -12,12 +12,12 @@ specific_board as (
 
  cards as (
 
-select name as card_name, idBoard as  BoardID, idList as idList_card  from trello-13.trello_data.trello_cards
+select name as card_name, idBoard as  BoardID, idList as idList_card  from {{ source('trello_source', 'trello_cards') }}
 ),
 
 stage_board as (
 
-select name as stage_name, idBoard as Board_number, id as stage_id  from trello-13.trello_data.trello_list
+select name as stage_name, idBoard as Board_number, id as stage_id  from {{ source("trello_source', 'trello_lists') }}
 
 ),
 
