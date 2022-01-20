@@ -1,6 +1,6 @@
 with all_boards as (
 
-    select name as board_name, id as board_id  from {{ ref('trello_boards') }}
+    select name as board_name, id as board_id  from {{ ref('trello_board') }}
 ),
 
 
