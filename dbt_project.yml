@@ -1,20 +1,18 @@
-name: 'trello_board'
-version: '1.0.0'
+name: 'tap_dbt_trello'
+version: '0.1.0'
 config-version: 2
 
-profile: 'trello_data'
-
-source-paths: ["models"]
-analysis-paths: ["analysis"]
-test-paths: ["tests"]
-data-paths: ["data"]
-macro-paths: ["macros"]
-snapshot-paths: ["snapshots"]
+source-paths: ["models"]   # paths with source code to compile
+analysis-paths: ["analysis"] # path with analysis files which are compiled, but not run
+target-path: "target"      # path for compiled code
+clean-targets: ["target"]  # directories removed by the clean task
+test-paths: ["tests"]       # where to store test results
+data-paths: ["data"]       # load CSVs from this directory with `dbt seed`
 
 models:
-  trello_board:
-    
+  tap_dbt_trello_:
     base:
-      +materialized: table
-
+      materialized: table
+    transform:
+      materialized: table
 
