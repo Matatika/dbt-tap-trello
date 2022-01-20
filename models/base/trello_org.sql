@@ -1,6 +1,6 @@
 with source_org as  (
   
-  select * from {{ source('trello_source', 'org') }}
+  select * from {{ source('trello_source', 'trello_org') }}
         ),
 
   renamed as  (   
