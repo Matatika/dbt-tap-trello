@@ -1,4 +1,4 @@
-{% snapshot daily_total_cards_a_stage %}
+{% snapshot daily_total_card_a_stage %}
 
   {{
         config(
