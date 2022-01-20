@@ -3,14 +3,14 @@
 
 with trello_board as (  
 
-select name, idOrganization from trello-13.trello_data.trello_board
+select name, idOrganization from {{ ref('trello_board') }}
 
 ),
 
 
 org as (
 
-   select displayName as workspace_name, id as org_id from trello-13.trello_data.trello_org
+   select displayName as workspace_name, id as org_id from {{ ref('trello_org') }} 
 
  ),
 
