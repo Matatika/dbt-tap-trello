@@ -1,6 +1,6 @@
-with source_users as ( 
+with source_members as ( 
 
-SELECT * FROM `trello-13.trello_data.trello_members_boards` LIMIT 1000
+select * from {{ source('trello_source', 'trello_board_members') }} 
 
 )
 
@@ -68,7 +68,7 @@ with renamed (
     
     name
 
-from  source_users
+from  source_members
   )  
   
  select * from renamed 
