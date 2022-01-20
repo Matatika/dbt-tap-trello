@@ -11,7 +11,7 @@
     }}
 
 
-select total_cards, stage_name from {{ ref('total_cards_each_stage') }} 
+select total_cards, stage_name from {{ ref('daily_total_cards_a_stage') }} 
 
 
 {% endsnapshot %}
