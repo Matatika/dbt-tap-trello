@@ -1,6 +1,6 @@
 with source_boards as (
 
-    select * from {{ source('trello_source', 'boards') }}
+    select * from {{ source('trello_source', 'trello_boards') }}
 
 ),
 
