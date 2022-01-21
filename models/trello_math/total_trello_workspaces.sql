@@ -22,5 +22,5 @@ WHERE trello_board.idOrganization = org.org_id
 
 ) 
 
-select count(distinct workspace_name) as number_of_workspace from workspace_agg
+select count(distinct workspace_name) as number_of_workspace, org_id from workspace_agg group by org_id
 
