@@ -1,0 +1,42 @@
+version: 2
+
+sources:
+  - name: trello_test
+    database: trello_test
+    description: This database contains relations created by tap-trello
+    schema: analytics
+    freshness: 
+      warn_after: {count: 12, period: 'hour'}  
+      error_after: {count: 24, period: 'hour'}  
+
+    
+
+
+
+    tables:
+    - name: actions
+      freshness:  
+
+    - name: boards
+      freshness: 
+
+    - name: cards 
+      freshness:   
+        warn_after:   {count: 6, period: 'hour' }   
+        error_after:  {count: 12, period: 'hour' } 
+ 
+      
+        
+
+    - name: checklists 
+      freshness: 
+
+    - name: lists 
+      freshness: 
+
+    - name: users
+      freshness: 
+        warn_after:  {count: 6, period: 'hour'}  
+        error_after: {count: 12, period: 'hour'}  
+
+       
