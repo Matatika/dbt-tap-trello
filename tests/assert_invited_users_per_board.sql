@@ -1,4 +1,4 @@
--- Assert that the total number of cards in trello_vw_cards_per_board equals the amount of cards in trello_cards.
+
 
 select
     count(username)
