@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: trello_test
+  - name: trello_data
     schema: "{{ env_var('DBT_TARGET_SCHEMA') }}"
     tables:
       - name: actions
