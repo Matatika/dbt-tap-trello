@@ -1,17 +1,20 @@
 with select_source as (
 
-     select * from  {{ source('trello_test', 'cards') }}
+     select * from  {{ source('trello_data', 'cards') }}
 
  ),
 
 
-renamed_columns as (
+renamed as (
 
-   select badges, checkitemstates as check_item_states, closed, cover, customfielditems as custom_field_items, datelastactivity as date_last_activity, "desc", descdata as desc_data, due, duecomplete as due_complete, duereminder as due_reminder, id,
-   idattachmentcover as id_attachment_cover, idboard as id_board, idchecklists as id_check_lists, idlabels as id_labels, idlist as id_list, idmembers as id_members, idmembersvoted as id_members_voted, idshort as id_short, istemplate as is_template, labels, manualcoverattachment as manual_cover_attachement, "name", pos, shortlink as short_link, shorturl as short_url, "start", subscribed, url
+   select badges__attachments as badges_attachment , check_item_states as check_item_states, closed, cover__brightness as cover_brightness, cover__color as cover_color, cover__id_attachment as cover_id_attachment, cover__id_uploaded_background as cover_id_uploaded_background, cover__size as cover_size, custom_field_items, date_last_activity, "desc", due, due_complete,  due_reminder, id,
+    id_attachment_cover,  id_board, id_checklists as id_check_lists, id_labels, id_list,  id_members, id_members_voted, id_short, is_template, labels,  manual_cover_attachment, "name", pos, short_link, short_url, "start", subscribed, url
    from select_source
 
   )
 
-  select * from renamed_columns
-  
+  select * from renamed
+
+                                                                                                                                                                  
+                                                                                                                                                                       
+                             
