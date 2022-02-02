@@ -2,17 +2,18 @@
 
 {{
     config(
-      
+
       target_schema='analytics',
-      unique_key='card_name',
+      unique_key='card_id',
       strategy='check',
-      check_cols=['card_name', 'url'],
+      check_cols=['recent_cards', 'date_last_activity'],
     )
-}}  
+}}
 
 
 
-select "name" as card_name, url, idboard as id_board, idlist as id_list from {{ source('trello_test', 'cards') }}
+  select "id" as card_id, name as recent_cards, id_list, date_last_activity from {{ source('trello_data', 'cards') }}
 
 
 {% endsnapshot %}
+                                                                                                                                                                                                                                                                                                                                                                                                 
