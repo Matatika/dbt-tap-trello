@@ -4,12 +4,13 @@
     config(
 
       target_schema='analytics',
-      unique_key='boardid',
+      unique_key='user_id',
       strategy='check',
-      check_cols=['username', 'boardid']
+      check_cols=['user_name', 'full_name']
     )
 }}
 
-select boardid, username, fullname from {{ source('trello_test', 'users' ) }}
+select "id" as user_id, board_id, username as user_name, full_name from {{ source('trello_data', 'users' ) }}
 
 {% endsnapshot %}
+ 
