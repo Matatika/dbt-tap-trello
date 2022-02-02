@@ -1,28 +1,30 @@
- 
-with board_table as (
+with trello_boards as (
 
-       select board_id, name as board_name from {{ ref('trello_boards') }} 
+       select "id" as board_id, "name" as board_name from {{ ref('trello_boards') }}
 
         ),
 
-  user_table as (
+  trello_users as (
 
-  select board_id, full_name, user_name from {{ ref('trello_users') }} 
+  select board_id, full_name,  user_name from {{ ref('invited_users_snapshot') }}
 
-    ), 
-    
-    
-    final_users as (  
-      
-    SELECT board_table.board_name, user_table.board_id, user_table.full_name, user_table.user_name
-    FROM user_table
-    INNER JOIN board_table ON board_table.board_id = user_table.board_id
-    ORDER BY board_table.board_name 
-      
-      )   
-      
-   select count(user_name) as invited_users, board_name from final_users 
-   group by board_name 
+    ),
+
+
+    final_users as (
+
+    SELECT trello_boards.board_name, trello_users.user_name
+    FROM trello_users
+    INNER JOIN trello_boards ON trello_boards.board_id = trello_users.board_id
+    group by trello_boards.board_name, trello_users.user_name
+
+      )
+
+
+select board_name, count(user_name) as num_of_invited_users from final_users
+group by board_name
+
+
 
 
  
