@@ -1,7 +1,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'trello_mat'
+name: 'tap_trello'
 version: '1.0.0'
 config-version: 2
 
@@ -31,10 +31,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
 models:
-  trello_mat:
+  tap_trello:
     # Config indicated by + and applies to all files under models/example/
-    base:
+    base: 
+      +materialized: table
     mart:
       +materialized: table
-      +full_refresh: true
+      
 
