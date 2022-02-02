@@ -1,8 +1,7 @@
-
-
 select
-    count(username)
-from {{ref('invited_users_snapshot')}}
-where boardid is not null
-having not count(username) = (select count(invited_users)
-	                       from {{ref('invited_users_per_board.sql')}})
+    count(user_name)
+from {{ref('invited_users_snapshot ')}}
+where board_id is not null
+having count(user_name) = (select count(username)
+                               from {{ref('trello_users')}} where board_is is not null )
+                                                                                     
