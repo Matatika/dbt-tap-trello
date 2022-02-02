@@ -1,6 +1,8 @@
 
 select
-    count(card_name)
+    count(recent_cards)
 from {{ref('track_cards_snapshot')}}
-having not count(card_name) = (select count(total_num_cards)
-                        from {{ref('daily_total_cards_each_stage')}})
+where card_id is not null
+ having count(recent_cards)  = (select count(name)
+                        from {{ref('trello_cards')}} where id is not null)
+
