@@ -1,4 +1,4 @@
-  with select_source as  (  
+    with select_source as  (  
   
       select * from {{ source('trello_data', 'boards') }}   
   
@@ -19,4 +19,4 @@
 
      )   
     
- select * from renamed                               
+ select * from renamed                       
