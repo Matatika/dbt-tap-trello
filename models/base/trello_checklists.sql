@@ -46,9 +46,7 @@ prefs__voting as prefs_voting, short_link, short_url, soft_limit, starred, subsc
  select * from renamed
 
 
-                                                                                                                                                      1,2           Top
-
-
+                                                                                                                                                    
 
 
 
