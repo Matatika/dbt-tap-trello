@@ -20,4 +20,4 @@ with select_source as  (
      )
 
  select * from renamed
-~                                                                
+                                                                
