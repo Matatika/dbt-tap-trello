@@ -1,0 +1,26 @@
+version: 2
+sources:
+  - name: trello_source
+    schema: "{{ env_var('DBT_SOURCE_SCHEMA') }}"
+    description: Data synced from Trello.
+    tables:
+      - name: stream_trello_actions
+        description: Source table of Trello actions. (Moving a card, updating cards, creating lists)
+
+      - name: stream_trello_boards
+        description: Source table of Trello boards.
+
+      - name: stream_trello_cards
+        description: Source table of Trello cards.
+
+      - name: stream_trello_checklists
+        description: Source table of Trello checklists.
+
+      - name: stream_trello_lists
+        description: Source table of Trello lists.
+
+      - name: stream_trello_member
+        description: Source table of Trello members.
+
+      - name: stream_trello_users
+        description: Source table of Trello users.

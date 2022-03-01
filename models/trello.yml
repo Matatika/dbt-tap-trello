@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: trello_actions
+    description: Trello actions.
+
+  - name: trello_boards
+    description: Trello boards.
+
+  - name: trello_cards
+    description: Trello cards.
+
+  - name: trello_checklists
+    description: Trello checklists.
+
+  - name: trello_lists
+    description: Trello lists.
+
+  - name: trello_users
+    description: Trello users.
+
+  - name: trello_users_snapshot
+    description: Trello users snapshot to keep track of users over time.
+
+  - name: trello_cards_snapshot
+    description: Trello cards snapshot to keep track of cards over time.
