@@ -1,15 +1,21 @@
-with select_source as (  
-  
-      select * from {{ source('trello_data', 'lists') }}   
-  
-   ),  
+with trello_lists as (
+
+  select * from {{ source('trello_source', 'stream_trello_lists') }}
+
+),  
+
+final as (
+
+  select
+    _sdc_batched_at
+    , _sdc_deleted_at
+    , _sdc_extracted_at
+    , closed
+    , id as id_list
+    , id_board
+    , name
+  from trello_lists 
+
+)   
    
- 
- renamed_columns as (   
-   
-    select closed, id as id_list, id_board, "name", pos, soft_limit, subscribed from select_source 
-   
-   )   
-   
-   
- select * from renamed_columns
+ select * from final
