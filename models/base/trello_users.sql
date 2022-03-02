@@ -44,10 +44,7 @@ overall_users as (
 final as (
 
   select
-    _sdc_batched_at
-    , _sdc_deleted_at
-    , _sdc_extracted_at
-    , full_name
+    full_name
     , id as id_user
     , username
     , id_board

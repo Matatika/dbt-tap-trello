@@ -7,10 +7,7 @@ with trello_boards as  (
 final as (
 
    select
-      _sdc_batched_at
-      , _sdc_deleted_at
-      , _sdc_extracted_at
-      , closed
+      closed
       , date_closed
       , date_last_activity
       , date_last_view

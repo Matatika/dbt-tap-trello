@@ -7,10 +7,7 @@ with trello_cards as (
  final as (
 
      select
-        _sdc_batched_at
-        , _sdc_deleted_at
-        , _sdc_extracted_at
-        , badges__attachment_by_type__trello__board as badges_attachment_by_type_trello_board
+        badges__attachment_by_type__trello__board as badges_attachment_by_type_trello_board
         , badges__attachment_by_type__trello__card as badges_attachment_by_type_trello_card
         , badges__attachments as badges_attachments
         , badges__check_items as badges_check_items
@@ -50,7 +47,7 @@ with trello_cards as (
         , name
         , pos
         , short_link
-        , start
+        , "start"
         , subscribed
         , url
         , dbt_valid_to

@@ -7,10 +7,7 @@ with trello_actions as (
 final as (
 
     select
-        _sdc_batched_at
-        , _sdc_deleted_at
-        , _sdc_extracted_at
-        , app_creator
+        app_creator
         , data__board__id as data_board_id
         , data__board__name as data_board_name
         , data__board__short_link as data_board_short_link

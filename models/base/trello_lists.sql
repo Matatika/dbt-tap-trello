@@ -7,10 +7,7 @@ with trello_lists as (
 final as (
 
   select
-    _sdc_batched_at
-    , _sdc_deleted_at
-    , _sdc_extracted_at
-    , closed
+    closed
     , id as id_list
     , id_board
     , name
