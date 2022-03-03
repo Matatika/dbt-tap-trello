@@ -19,8 +19,8 @@ sources:
       - name: stream_trello_lists
         description: Source table of Trello lists.
 
-      - name: stream_trello_member
-        description: Source table of Trello members.
+      - name: stream_trello_id_member
+        description: Source table of the current users Trello member id.
 
-      - name: stream_trello_users
-        description: Source table of Trello users.
+      - name: stream_trello_members
+        description: Source table of Trello members.

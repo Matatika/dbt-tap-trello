@@ -16,11 +16,11 @@ models:
   - name: trello_lists
     description: Trello lists.
 
-  - name: trello_users
-    description: Trello users.
+  - name: trello_members
+    description: Trello members.
 
-  - name: trello_users_snapshot
-    description: Trello users snapshot to keep track of users over time.
+  - name: trello_members_snapshot
+    description: Trello members snapshot to keep track of members over time.
 
   - name: trello_cards_snapshot
     description: Trello cards snapshot to keep track of cards over time.
