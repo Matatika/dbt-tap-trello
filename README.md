@@ -1,52 +1,47 @@
 # dbt-tap-trello
-This dbt package contains data models for tap-trello.
+This dbt package contains models for Matatika's [tap-trello](https://github.com/Matatika/tap-trello).
 
-The main focus of this package is to generate insights for the following goals:  
+The main focus of the package is to transform stream `tap-trello` data into usable analytics models.
 
--  What is the total number of cards currently in each stage of my board?
--  What is the daily total number of cards for a stage in my board?
--  What is the total number of users invited to my board?
--  What is the total number of workspaces in my Trello account?
+This package along with the [Analyze Bundle](https://github.com/Matatika/analyze-trello) are designed intended to work together to provide instant insights on the [Matatika Platform](https://www.matatika.com).
 
-This package along with the [Analyze Bundle](..................) are designed intended to work together to provide instant insights on the [Matatika Platform](https://www.matatika.com/).
-
-
-## Models   
-
-| Models | Description |  
-|--------|-------------|  
-| daily_total_cards | This model is similar to the preceding model but checks the total number of cards in each stage of a trello board daily |  
-| total_workspaces | This model lists the number of workspaces in a user's trello account |  
-| total_users_board | This model lists the total number of users invited to a trello board | 
+| **model**              | **description** |
+| ---------------------- | ------------------------------------------------------------- |
+| [trello_actions](models/base/trello_actions.sql) | Trello actions data (Card creation, edits, moves) |
+| [trello_boards](models/base/trello_boards.sql) | Trello boards data |
+| [trello_cards](models/base/trello_cards.sql) | Trello cards data |
+| [trello_checklists](models/base/trello_checklists.sql) | Trello checklists data (Checklists on cards) |
+| [trello_lists](models/base/trello_lists.sql) | Trello lists data (Columns in boards) |
+| [trello_members](models/base/trello_members.sql) | Trello members data |
+| [trello_vw_active_members](models/mart/trello_vw_active_members.sql) | View of all active members from all boards |
+| [trello_vw_total_cards_each_board](models/mart/trello_vw_total_cards_each_board.sql) | View of count of cards in each board |
 
 
-## Installation Instructions  
+## Installation Instructions
+Check [dbt Hub](https://hub.getdbt.com/) for the latest installation instructions, or [read the dbt docs](https://docs.getdbt.com/docs/package-management) for more information on installing packages.
 
-Check [dbt Hub](https://hub.getdbt.com/) for the latest installation instructions, or [read the dbt docs](https://docs.getdbt.com/docs/package-management) for more information on installing packages.  
-
+Include in your `packages.yml`
 ```yaml
 packages:
-  
-  - package: re-data/re_data
-    version: 0.5.1
+  - git: https://github.com/Matatika/dbt-tap-trello.git
 ```
 
 ### One time setup (after creating a python virtual environment)
 
-```
-pip install dbt
-dbt deps
-```
-    
+    ```
+    pip install dbt
+    dbt deps
+    ```
+
 ### development
 
-```
-dbt test
-```
+    ```
+    dbt test
+    ```
 
 ## Database Support
-This package has been tested on [Google BigQuery](https://cloud.google.com/bigquery) and [Postgres](https://www.postgresql.org/).   
- 
+This package has been tested on Postgres and Snowflake.
+
 ## Cloud hosting and SaaS
 Deploy on the Matatika Platform within minutes. [www.matatika.com](https://www.matatika.com)
 
@@ -64,13 +59,6 @@ on the best workflow for contributing to a package.
 - Learn more about Matatika [in our docs](https://www.matatika.com/docs/introduction)
 - Learn more about dbt [in the dbt docs](https://docs.getdbt.com/docs/introduction)
 
-## License
-You are granted use of this library under the AGPLv3 License.
-
-This license grants you the freedom to use the software without any warranties, but requires you to open source your platform with the same terms if you distribute or host a service using any part of this library.  Contact us for a commercial embedded license to remove this restriction.
-
 ---
 
-Copyright &copy; 2020 
-
-
+Copyright &copy; 2022 Matatika
