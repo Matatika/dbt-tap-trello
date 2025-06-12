@@ -20,7 +20,7 @@ most_recent_card_data as (
 final as (
 
   select
-    count(distinct(id_card))
+    count(distinct(id_card)) as card_count
     , trello_boards.name
   from most_recent_card_data
   left join trello_boards on trello_boards.id_board = most_recent_card_data.id_board
