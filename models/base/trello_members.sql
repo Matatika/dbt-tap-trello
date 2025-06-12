@@ -34,7 +34,7 @@ overall_members as (
     select
         *
     from active_members
-    union
+    union all
     select
         *
     from deleted_members
