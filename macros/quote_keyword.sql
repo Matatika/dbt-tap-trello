@@ -7,5 +7,5 @@
 {% endmacro %}
 
 {% macro quote_keyword(keyword) %}
-  {{ adapter.dispatch('quote_keyword', 'tap_trello')(keyword) }}
+  {{ adapter.dispatch('quote_keyword')(keyword) }}
 {% endmacro %}
