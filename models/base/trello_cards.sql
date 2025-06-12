@@ -27,7 +27,7 @@ with trello_cards as (
         , check_item_states
         , closed
         , date_last_activity
-        , "desc"
+        , {{ quote('desc') }}
         , due
         , due_complete
         , due_reminder
@@ -47,7 +47,7 @@ with trello_cards as (
         , name
         , pos
         , short_link
-        , "start"
+        , {{ quote('start') }}
         , subscribed
         , url
         , dbt_valid_to
