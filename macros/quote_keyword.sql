@@ -1,7 +1,11 @@
+{% macro default__quote_keyword(keyword) %}
+  "{{ keyword }}"
+{% endmacro %}
+
+{% macro bigquery__quote_keyword(keyword) %}
+  `{{ keyword }}`
+{% endmacro %}
+
 {% macro quote_keyword(keyword) %}
-  {%- if target.type == 'bigquery' -%}
-    `{{ keyword }}`
-  {%- else -%}
-    "{{ keyword }}"
-  {%- endif -%}
+  {{ adapter.dispatch('quote_keyword', 'tap_trello')(keyword) }}
 {% endmacro %}
