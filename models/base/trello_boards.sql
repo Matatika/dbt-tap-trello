@@ -11,7 +11,7 @@ final as (
       , date_closed
       , date_last_activity
       , date_last_view
-      , "desc"
+      , {{ quote_keyword('desc') }}
       , desc_data
       , enterprise_owned
       , id_enterprise
