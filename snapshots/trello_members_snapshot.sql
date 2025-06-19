@@ -3,7 +3,7 @@
 {{
     config(
       target_schema=var('schema'),
-      unique_key='id',
+      unique_key=['id', 'id_board'],
       strategy='check',
       check_cols=['id', 'id_board', 'full_name', 'username'],
       invalidate_hard_deletes=True,
